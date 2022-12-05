@@ -23,10 +23,6 @@
         :alt: Twitter
         :target: https://twitter.com/Point-GNN-PyTorch
 
-.. image:: https://img.shields.io/badge/-PyScaffold-005CA0?logo=pyscaffold
-    :alt: Project generated with PyScaffold
-    :target: https://pyscaffold.org/
-
 |
 
 =================
@@ -34,16 +30,11 @@ Point-GNN-PyTorch
 =================
 
 
-    Add a short description here!
+    This is a PyTorch Geometric implementation of PointGNN.
 
 
-A longer description of your project goes here...
+PointGNN (`code <https://github.com/WeijingShi/Point-GNN>`_, `paper <https://openaccess.thecvf.com/content_CVPR_2020/papers/Shi_Point-GNN_Graph_Neural_Network_for_3D_Object_Detection_in_a_CVPR_2020_paper.pdf>`_) is a state-of-the-art paper that solves 3D object detection using Graph Neural Networks. 
 
 
-.. _pyscaffold-notes:
 
-Note
-====
 
-This project has been set up using PyScaffold 4.3.1. For details and usage
-information on PyScaffold see https://pyscaffold.org/.
