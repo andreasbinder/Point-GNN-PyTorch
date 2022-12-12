@@ -47,6 +47,13 @@ class PointGNNConv(MessagePassing):
         self.lin_f = MLP_f 
         self.lin_g = MLP_g 
 
+        self.reset_parameters()
+
+    def reset_parameters(self):
+        self.lin_h.reset_parameters()
+        self.lin_f.reset_parameters()
+        self.lin_g.reset_parameters() 
+
     def forward(self, x, pos, edge_index):
         out = self.propagate(edge_index, x=x, pos=pos)
         out = self.lin_g(out)

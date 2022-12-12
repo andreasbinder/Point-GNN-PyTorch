@@ -11,18 +11,18 @@ class PointGNN(torch.nn.Module):
     def __init__(self, 
                 num_node_features=3, 
                 num_classes=40, 
-                MLP_h: MLP = MLP([3, 64, 3]),
-                MLP_f: MLP = MLP([6, 64, 3]),
-                MLP_g: MLP = MLP([3, 64, 3])
+                MLP_h: list = [3, 64, 3],
+                MLP_f: list = [6, 64, 3],
+                MLP_g: list = [3, 64, 3]
         ):
         super().__init__()
 
         self.num_node_features = num_node_features
         self.num_classes = num_classes
 
-        self.conv1 = PointGNNConv(state_channels=num_node_features, MLP_h=MLP_h, MLP_f=MLP_f, MLP_g=MLP_g, aggr="max")
-        self.conv2 = PointGNNConv(state_channels=num_node_features, MLP_h=MLP_h, MLP_f=MLP_f, MLP_g=MLP_g, aggr="max")
-        self.conv3 = PointGNNConv(state_channels=num_node_features, MLP_h=MLP_h, MLP_f=MLP_f, MLP_g=MLP_g, aggr="max")
+        self.conv1 = PointGNNConv(state_channels=num_node_features, MLP_h=MLP(MLP_h), MLP_f=MLP(MLP_f), MLP_g=MLP(MLP_g), aggr="max")
+        self.conv2 = PointGNNConv(state_channels=num_node_features, MLP_h=MLP(MLP_h), MLP_f=MLP(MLP_f), MLP_g=MLP(MLP_g), aggr="max")
+        self.conv3 = PointGNNConv(state_channels=num_node_features, MLP_h=MLP(MLP_h), MLP_f=MLP(MLP_f), MLP_g=MLP(MLP_g), aggr="max")
 
         self.linear = nn.Linear(num_node_features, num_classes)
 
